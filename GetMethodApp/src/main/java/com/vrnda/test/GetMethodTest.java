@@ -8,7 +8,7 @@ import com.vrnda.util.HibernateUtil;
 
 public class GetMethodTest {
 	public static void main(String[] args) {
-		System.out.println("GetMethodTest.main()");
+		System.out.println("GetMethodTest.main() ");
 		Employee emp=null;
 		Transaction tx=null;
 		Session ses=null;
