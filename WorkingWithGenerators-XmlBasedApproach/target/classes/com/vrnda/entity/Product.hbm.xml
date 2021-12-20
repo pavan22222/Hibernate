@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+	<class name="com.vrnda.entity.Product" table="PRODUCTS">
+		<id name="pid">
+			<!-- <generator class="org.hibernate.id.Assigned"></generator> -->
+			<!-- <generator class="assigned"></generator> -->
+			<!-- <generator class="increment"></generator> -->
+			<!-- IdentityGenerator works Only in such Db s/ws which supports identity columns like MySQL and etc,..-->
+			<!-- <generator class="identity"></generator> -->
+			<!-- <generator class="sequence">
+				<param name="sequence_name">PRODUCT_ID</param>
+			</generator> -->
+			<!-- Working with custom generator class -->
+			<generator class="com.vrnda.generators.RandomIdGenerator">
+			</generator>
+			
+			
+			
+		</id>
+		<property name="pname" column="PNAME" length="30"></property>
+		<property name="price"></property>
+		<property name="dom" ></property>
+		<property name="doe" ></property>
+	
+	</class>
+
+</hibernate-mapping>
