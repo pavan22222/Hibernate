@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.vrnda.entity.Programmer" table="Programmers">
+		<composite-id name="id" class="com.vrnda.entity.ProgProjIDDetails">
+			<key-property name="progId"></key-property>
+			<key-property name="projId"></key-property>
+		</composite-id>
+		
+		<property name="name" type="string" length="30"></property>
+		<property name="projName" type="string" length="30"></property>
+		<property name="salary" type="double"></property>
+	</class>
+
+</hibernate-mapping>

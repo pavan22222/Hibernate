@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.vrnda.entity.Employee" table="EMPLOYEE">
+		<id name="id">
+			<generator class="sequence">
+				<param name="sequence_name">PRODUCT_ID</param>
+			</generator>
+
+		</id>
+		
+		<timestamp name="lastUpdationDate"></timestamp>
+		<property name="name"></property>
+		<property name="age"></property>
+		<property name="salary"></property>
+		<property name="doj"></property>
+		<property name="creationDate"></property>
+
+
+	</class>
+
+</hibernate-mapping>
