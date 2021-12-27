@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+	
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+		<property name="hibernate.connection.username">System</property>
+		<property name="hibernate.connection.password">Pavan</property>
+		
+<!-- 		<property name="hibernate.connection.pool_size">30</property> -->
+		<property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- Connection Pool Configuration -->
+		<property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+		<!-- Takes 30 secs time before throwing error when pool not giving connection -->
+		<property name="hibernate.hikari.connectionTimeout">30000</property>
+		<!-- when pool is created it maintains minimum 10 connections -->
+		<property name="hibernate.hikari.minimumIdle">10</property>
+		<!-- if any connection object in the pool is idle for 30 secs then it will be destroyed -->
+		<property name="hibernate.hikari.idleTimeout">30000</property>
+		<!-- pool can grows max of 10 connections -->
+		<property name="hibernate.hikari.maximumPoolSize">10</property>
+	</session-factory>
+
+</hibernate-configuration>
