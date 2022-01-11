@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.vrnda.entity.Employee">
+		<id name="id" ></id>
+		<!-- <version name="version" type="int"></version> -->
+		<timestamp name="lastUpdationDate"></timestamp>
+		<property name="name" ></property>
+		<property name="age" ></property>
+		<property name="salary" ></property>
+		<!-- <property name="version" ></property> -->
+		<property name="designation" ></property>
+		<property name="doj" ></property>
+		<property name="creationDate" ></property>
+		<!-- <property name="lastUpdationDate" ></property> -->
+	</class>
+	
+	<sql-query name="DELETE_EMPLOYEE">
+		<![CDATA[
+			DELETE FROM EMPLOYEE WHERE ID=:ID
+		]]>
+	</sql-query>
+
+</hibernate-mapping>
