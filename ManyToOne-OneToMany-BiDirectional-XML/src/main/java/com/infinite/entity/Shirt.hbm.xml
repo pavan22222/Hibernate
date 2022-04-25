@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+
+	<class name="com.infinite.entity.Shirt">
+		<id name="shirtId">
+			<generator class="sequence">
+				<param name="sequence_name">Shirt_Id</param>
+			</generator>
+		</id>
+		<property name="brand"></property>
+		<property name="colour" length="20"></property>
+		<many-to-one name="pant" class="com.infinite.entity.Pant" column="pant_Id" cascade="all" lazy="proxy">
+		</many-to-one>
+	</class>
+
+
+</hibernate-mapping>

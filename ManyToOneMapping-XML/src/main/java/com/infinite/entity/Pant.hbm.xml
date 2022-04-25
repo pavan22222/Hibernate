@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+
+	<class name="com.infinite.entity.Pant" table="PANT">
+		<id name="pantId">
+			<generator class="sequence">
+				<param name="sequence_name">PANT_ID</param>
+			</generator>
+		</id>
+		<property name="brand" length="20"></property> 
+		<!-- <property name="size"></property> -->
+		<property name="colour" length="20"></property>
+	
+	</class>
+
+
+</hibernate-mapping>

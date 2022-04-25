@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.infinite.entity.Apartment">
+		<id name="apartmentId">
+			<generator class="sequence"></generator>
+		</id>
+		<property name="name" length="20"></property>
+		<property name="location" length="20"></property>
+		<property name="doc"></property>
+		
+		<map name="flats" cascade="all all-delete-orphan" lazy="true">
+			<key column="aprt_id"></key>
+			<map-key column="flat_index" type="string"></map-key>
+			<one-to-many class="com.infinite.entity.Flat"></one-to-many>
+		</map>
+	</class>
+
+</hibernate-mapping>
