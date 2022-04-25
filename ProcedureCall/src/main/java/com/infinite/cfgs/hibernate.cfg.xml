@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database Connection Properties Configuration -->
+        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
+        <property name="hibernate.connection.username">System</property>
+        <property name="hibernate.connection.password">Pavan</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+        <property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+        <property name="hibernate.hikari.minimumIdle">10</property>
+        <property name="hibernate.hikari.maximumPoolSize">30</property>
+        <property name="hibernate.hikari.idleTimeout">300000</property>
+        <property name="hibernate.hikari.connectionTimeout">300000</property>
+
+        <mapping resource="src/main/java/com/infinte/entity/Student.hbm.xml"></mapping>
+    </session-factory>
+</hibernate-configuration>
